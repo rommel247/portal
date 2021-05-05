@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+
+#nullable disable
+
+namespace portal.api.Models
+{
+    public partial class BfUtilizationLctransactionV
+    {
+        public string TrxCard { get; set; }
+        public string TrxName { get; set; }
+        public int EntryNo { get; set; }
+        public int Categoryid { get; set; }
+        public string Bankid { get; set; }
+        public int ProjectId { get; set; }
+        public int? Accountnoid { get; set; }
+        public double? TrxAmount { get; set; }
+        public DateTime TrxDate { get; set; }
+        public DateTime? EntryDate { get; set; }
+        public int SectorId { get; set; }
+    }
+}
