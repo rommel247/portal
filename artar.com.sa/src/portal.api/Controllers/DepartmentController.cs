@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-
+using portal.api.Shared.Commands;
+using portal.api.Shared.Interface;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace portal.api.Controllers
@@ -12,6 +13,11 @@ namespace portal.api.Controllers
     [ApiController]
     public class DepartmentController : ControllerBase
     {
+        private readonly IDepartmentService _service;
+        public DepartmentController(IDepartmentService service)
+        {
+            _service =service;
+        }
         // GET: api/<DepartmentController>
         [HttpGet]
         public IEnumerable<string> Get()
@@ -28,8 +34,10 @@ namespace portal.api.Controllers
 
         // POST api/<DepartmentController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<ActionResult<int>> Create([FromBody] CreateDepartmentParameter parameter)
         {
+          var response=  await _service.CreateAsync(parameter);
+            return response;
         }
 
         // PUT api/<DepartmentController>/5
