@@ -11,7 +11,6 @@ C:\git\portal\artar.com.sa\src\portal.api\bin\Debug\net5.0\Microsoft.OpenApi.dll
 C:\git\portal\artar.com.sa\src\portal.api\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\git\portal\artar.com.sa\src\portal.api\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\git\portal\artar.com.sa\src\portal.api\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\git\portal\artar.com.sa\src\portal.api\obj\Debug\net5.0\portal.api.csprojAssemblyReference.cache
 C:\git\portal\artar.com.sa\src\portal.api\obj\Debug\net5.0\portal.api.GeneratedMSBuildEditorConfig.editorconfig
 C:\git\portal\artar.com.sa\src\portal.api\obj\Debug\net5.0\portal.api.AssemblyInfoInputs.cache
 C:\git\portal\artar.com.sa\src\portal.api\obj\Debug\net5.0\portal.api.AssemblyInfo.cs

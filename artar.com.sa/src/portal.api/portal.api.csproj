@@ -22,6 +22,7 @@
   <ItemGroup>
     <Folder Include="Data\Dto\" />
     <Folder Include="Data\ViewModel\" />
+    <Folder Include="Service\" />
   </ItemGroup>
 
 </Project>
