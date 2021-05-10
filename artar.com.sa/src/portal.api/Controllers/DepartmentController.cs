@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using portal.api.Shared.Commands;
+using portal.api.Shared.Dto;
 using portal.api.Shared.Interface;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,15 +16,19 @@ namespace portal.api.Controllers
     public class DepartmentController : ControllerBase
     {
         private readonly IDepartmentService _service;
-        public DepartmentController(IDepartmentService service)
+        private readonly ILogger<DepartmentController> _logger;
+        public DepartmentController(IDepartmentService service,ILogger<DepartmentController> logger)
         {
-            _service =service;
+            _service = service;
+            _logger = logger;
         }
         // GET: api/<DepartmentController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IEnumerable<DepartmentDto>> Get()
         {
-            return new string[] { "value1", "value2" };
+            _logger.LogInformation("Get issue from Service");
+            return await _service.GetAllDepartmentAsync();
+
         }
 
         // GET api/<DepartmentController>/5
@@ -36,7 +42,7 @@ namespace portal.api.Controllers
         [HttpPost]
         public async Task<ActionResult<int>> Create([FromBody] CreateDepartmentParameter parameter)
         {
-          var response=  await _service.CreateAsync(parameter);
+            var response = await _service.CreateAsync(parameter);
             return response;
         }
 

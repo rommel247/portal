@@ -27,24 +27,33 @@ namespace portal.api.Service
                 Mode = parameter.Mode,
                 Title = parameter.Title,
                 FullName = parameter.FullName,
-                Email= parameter.Email,
+                Email = parameter.Email,
                 Cc = parameter.Cc,
-                Bcc=parameter.Bcc
+                Bcc = parameter.Bcc
 
             };
             await _dbcontext.AddAsync(newdepartment);
             await _dbcontext.SaveChangesAsync();
             return newdepartment.DepartmentId;
         }
-
+        public Task<ActionResult> UpdateAsync(UpdateDepartmentParameter parameter)
+        {
+            throw new NotImplementedException();
+        }
         public Task<ActionResult> DeleteAsync(int Id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<DepartmentDto>> GetAllDepartmentAsync()
+        public async Task<IEnumerable<DepartmentDto>> GetAllDepartmentAsync()
         {
-            throw new NotImplementedException();
+            return await _dbcontext.SiteDepartments.Select(d => new DepartmentDto
+            {
+                DepartmentId = d.DepartmentId,
+                DepartmentName = d.DepartmentName,
+                Mode = d.Mode,
+                SiteCode = d.SiteCode
+            }).ToListAsync();
         }
 
         public Task<IEnumerable<DepartmentDto>> GetDepartmentByIdAsync(int Id)
@@ -52,9 +61,6 @@ namespace portal.api.Service
             throw new NotImplementedException();
         }
 
-        public Task<ActionResult> UpdateAsync(UpdateDepartmentParameter parameter)
-        {
-            throw new NotImplementedException();
-        }
+     
     }
 }
