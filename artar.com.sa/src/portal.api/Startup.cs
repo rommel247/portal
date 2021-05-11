@@ -28,6 +28,8 @@ namespace portal.api
                 cfg.UseSqlServer(Configuration.GetConnectionString("Art_AppDb"));
             });
             services.AddScoped<IDepartmentService, DepartmentService>();
+            services.AddScoped<ISiteService, SiteService>();
+
             services.AddControllers();
 
             services.AddSwaggerGen(c =>

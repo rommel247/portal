@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using portal.api.Shared.Commands;
+using portal.api.Shared.Parameters;
 using portal.api.Shared.Dto;
 using portal.api.Shared.Interface;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -32,10 +30,17 @@ namespace portal.api.Controllers
         }
 
         // GET api/<DepartmentController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{id:int}")]
+        public async Task<IEnumerable<DepartmentDto>> GetById(int id)
         {
-            return "value";
+            return await _service.GetDepartmentByIdAsync(id);
+        }
+
+        // GET api/<DepartmentController>/5
+        [HttpGet("{sitecode}")]
+        public async Task<IEnumerable<DepartmentDto>> GetBySiteCode(string sitecode)
+        {
+            return await _service.GetDeparmentBySitecodeAsync(sitecode);
         }
 
         // POST api/<DepartmentController>
@@ -48,14 +53,17 @@ namespace portal.api.Controllers
 
         // PUT api/<DepartmentController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Update(int id, [FromBody] string value)
         {
         }
 
         // DELETE api/<DepartmentController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
+            //validate if exist if not then show error
+            var response = await _service.DeleteAsync(id);
+            return Ok(response);
         }
     }
 }

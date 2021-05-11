@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using portal.api.Shared.Dto;
 using portal.api.Shared.Interface;
-using portal.api.Shared.Commands;
+using portal.api.Shared.Parameters;
 using Microsoft.EntityFrameworkCore;
 using portal.api.Models;
 
@@ -40,11 +40,7 @@ namespace portal.api.Service
         {
             throw new NotImplementedException();
         }
-        public Task<ActionResult> DeleteAsync(int Id)
-        {
-            throw new NotImplementedException();
-        }
-
+       
         public async Task<IEnumerable<DepartmentDto>> GetAllDepartmentAsync()
         {
             return await _dbcontext.SiteDepartments.Select(d => new DepartmentDto
@@ -56,11 +52,35 @@ namespace portal.api.Service
             }).ToListAsync();
         }
 
-        public Task<IEnumerable<DepartmentDto>> GetDepartmentByIdAsync(int Id)
+        public async Task<IEnumerable<DepartmentDto>> GetDepartmentByIdAsync(int Id)
         {
-            throw new NotImplementedException();
+            return await _dbcontext.SiteDepartments
+                .Where(x => x.DepartmentId == Id|| x.FkDepartmentId == Id)
+                .Select(d => new DepartmentDto
+            {
+                DepartmentId = d.DepartmentId,
+                DepartmentName = d.DepartmentName,
+                Mode = d.Mode,
+                SiteCode = d.SiteCode
+            }).ToListAsync();
         }
 
-     
+        public async Task<IEnumerable<DepartmentDto>> GetDeparmentBySitecodeAsync(string sitecode)
+        {
+            return await _dbcontext.SiteDepartments
+                .Where(x=>x.SiteCode==sitecode)
+                .Select(d => new DepartmentDto
+                {
+                    DepartmentId = d.DepartmentId,
+                    DepartmentName = d.DepartmentName,
+                    Mode = d.Mode,
+                    SiteCode = d.SiteCode
+                }).ToListAsync();
+        }
+
+        Task<IActionResult> IDepartmentService.DeleteAsync(int Id)
+        {            
+            throw new System.NotImplementedException();
+        }
     }
 }
