@@ -14,17 +14,14 @@ namespace portal.api.Controllers
     public class DepartmentController : ControllerBase
     {
         private readonly IDepartmentService _service;
-        private readonly ILogger<DepartmentController> _logger;
-        public DepartmentController(IDepartmentService service,ILogger<DepartmentController> logger)
+        public DepartmentController(IDepartmentService service)
         {
             _service = service;
-            _logger = logger;
         }
         // GET: api/<DepartmentController>
         [HttpGet]
         public async Task<IEnumerable<DepartmentDto>> Get()
-        {
-            _logger.LogInformation("Get issue from Service");
+        {          
             return await _service.GetAllDepartmentAsync();
 
         }
