@@ -67,3 +67,4 @@ C:\git\portal\artar.com.sa\src\portal.api\obj\Debug\net5.0\portal.api.pdb
 C:\git\portal\artar.com.sa\src\portal.api\obj\Debug\net5.0\portal.api.genruntimeconfig.cache
 C:\git\portal\artar.com.sa\src\portal.api\bin\Debug\net5.0\Castle.Core.dll
 C:\git\portal\artar.com.sa\src\portal.api\bin\Debug\net5.0\Moq.dll
+C:\git\portal\artar.com.sa\src\portal.api\obj\Debug\net5.0\portal.api.csprojAssemblyReference.cache
