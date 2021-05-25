@@ -8,11 +8,10 @@ using System.Collections.Generic;
 using System.Linq;
 namespace portal.test
 {
-
-    public class DepartmentControllerTest
+    public class DepartmentControllerTests
     {
         private readonly Mock<IDepartmentService> _mockDepartmentService;
-        public DepartmentControllerTest()
+        public DepartmentControllerTests()
         {
             _mockDepartmentService = new Mock<IDepartmentService>();
         }

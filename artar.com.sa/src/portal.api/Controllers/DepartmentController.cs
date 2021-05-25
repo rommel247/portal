@@ -39,6 +39,8 @@ namespace portal.api.Controllers
             return await _service.GetDeparmentBySitecodeAsync(sitecode);
         }
 
+    
+
         // POST api/<DepartmentController>
         [HttpPost]
         public async Task<ActionResult<int>> Create([FromBody] CreateDepartmentParameter parameter)
