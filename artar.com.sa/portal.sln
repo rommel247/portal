@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "portal", "portal.csproj", "{C12F984F-9336-4579-AADA-DDF49EC15AF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "portal", "portal\portal.csproj", "{C12F984F-9336-4579-AADA-DDF49EC15AF6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "portal.api", "src\portal.api\portal.api.csproj", "{531669C9-C187-4C75-88E7-DF2CDFD74D36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "portal.api", "portal.api\portal.api.csproj", "{531669C9-C187-4C75-88E7-DF2CDFD74D36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "portal.test", "src\portal.test\portal.test.csproj", "{57D3E1B9-DBA6-4D34-9419-B2B0371A44D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "portal.test", "portal.test\portal.test.csproj", "{57D3E1B9-DBA6-4D34-9419-B2B0371A44D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

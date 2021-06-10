@@ -1,6 +1,0 @@
-C:\git\portal\artar.com.sa\obj\Debug\netcoreapp3.1\portal.csprojAssemblyReference.cache
-C:\git\portal\artar.com.sa\obj\Debug\netcoreapp3.1\portal.csproj.CoreCompileInputs.cache
-C:\git\portal\artar.com.sa\obj\Debug\netcoreapp3.1\portal.MvcApplicationPartsAssemblyInfo.cs
-C:\git\portal\artar.com.sa\obj\Debug\netcoreapp3.1\portal.MvcApplicationPartsAssemblyInfo.cache
-C:\git\portal\artar.com.sa\obj\Debug\netcoreapp3.1\portal.RazorAssemblyInfo.cache
-C:\git\portal\artar.com.sa\obj\Debug\netcoreapp3.1\portal.RazorAssemblyInfo.cs
